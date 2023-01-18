@@ -29,7 +29,7 @@ resource "random_pet" "sg" {}
 
 resource "aws_instance" "web" {
   ami                    = "ami-01625be155ee390e9"
-  instance_type          = "t2.micro"
+  instance_type          = "hvm:ebs-ssd"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
   user_data = <<-EOF
